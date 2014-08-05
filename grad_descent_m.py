@@ -89,7 +89,7 @@ while J_loss - J_loss_new > Er:
 
  	for i in range(0,thetas):
  		err[i,:] = (predictions - y) * X[:,i]
- 		theta[i,0] = theta[i,0] - alpha * (1.0/m) * err[i,0].sum()
+ 		theta[i,0] = theta[i,0] - alpha * (1.0/m) * err[i,:].sum()
  		theta_vals[no_iter,i] = theta[i,0]
 
  	J_loss_new = cost_f(X,y,theta)
